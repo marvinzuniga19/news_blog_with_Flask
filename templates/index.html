@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {% for item in news %}
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    {% if item.image %}
+                        <img src="{{ url_for('static', filename='uploads/' + item.image) }}" class="card-img-top img-fluid" alt="{{ item.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ item.title }}</h2>
+                        <p class="card-text">{{ item.content }}</p>
+                        <a href="{{ url_for('edit_news', news_id=item.id) }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="{{ url_for('delete_news', news_id=item.id) }}" class="btn btn-danger btn-sm">Delete</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+:root {
+    --primary-color: #007bff; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary gray */
+    --dark-gray: #343a40;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--dark-gray) !important;
+}
+
+.navbar-brand,
+.nav-link {
+    color: var(--white) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem var(--card-shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 2rem var(--card-shadow);
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.card-img-top {
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+    }
+
+    .card-img-top {
+        max-height: 150px;
+    }
+}
